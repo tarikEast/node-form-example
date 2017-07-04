@@ -7,7 +7,11 @@ const Validations = buildValidations({
     validator('presence', true),
     validator('length', { min: 4 })
   ],
-  lastName: validator('presence', true)
+  lastName: validator('presence', true),
+  email: [
+    validator('presence', true),
+    validator('format', { type: 'email' })
+  ]
 })
 
 export default Ember.Controller.extend({

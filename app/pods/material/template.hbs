@@ -1,6 +1,7 @@
 {{#nd-form data submit=(action 'submit') class="nd-material-form" as |form|}}
   {{form.nd-control-group propertyName="firstName"}}
   {{form.nd-control-group propertyName="lastName"}}
+  {{form.nd-control-group propertyName="email"}}
 
   <button type='submit' class="nd-button">Save</button>
 {{/nd-form}}
@@ -13,4 +14,7 @@
 </div>
 <div>
   Last Name: {{model.lastName}}
+</div>
+<div>
+  Email: {{model.email}}
 </div>
