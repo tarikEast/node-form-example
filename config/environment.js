@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'node-ember-forms',
+    podModulePrefix: 'node-ember-forms/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -44,6 +45,27 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  ENV['ember-do-forms'] = {
+    errorsPath: 'validations.attrs.{PROPERTY_NAME}.errors',
+    autoDataTestSelectors: false,
+
+    defaultClasses: {
+      form: [],
+      field: ['nd-field'],
+      label: ['nd-label'],
+      control: ['nd-control'],
+      feedback: ['nd-feedback'],
+      hint: []
+    },
+
+    validationClasses: {
+      fieldSuccess: [],
+      fieldError: ['--nd-error'],
+      controlSuccess: [],
+      controlError: []
+    }
   }
 
   return ENV;

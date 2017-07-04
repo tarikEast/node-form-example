@@ -40,5 +40,11 @@
   "engines": {
     "node": ">= 4"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "ember-cli-sass": "^7.0.0",
+    "ember-cp-validations": "^3.3.2",
+    "ember-do-forms": "^1.10.0",
+    "ember-validated-form-buffer": "^0.1.0"
+  }
 }

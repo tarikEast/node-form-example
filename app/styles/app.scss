@@ -1,0 +1,151 @@
+* {
+  font-family: 'Roboto';
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+.nd-feedback{
+  color: #E94659;
+  font-size: 12px;
+  padding: 5px 16px;
+}
+
+.nd-button {
+  display: block;
+  height: 28px;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  background-color: #2ABF00;
+  color: white;
+  border-radius: 2px;
+
+  :focus {
+    outline: none;
+  }
+}
+
+.nd-material-form {
+  margin-top: 20px;
+  .nd-field {
+    margin-top: 10px;
+
+    &.--nd-error {
+      .nd-control-group {
+        border-color: #E94659;
+
+        .nd-label{
+          color: #E94659;
+        }
+      }
+    }
+
+    .nd-control-group {
+      position: relative;
+      height: 42px;
+      border: {
+        top: 1px solid #D8DBDE;
+        bottom: 1px solid #D8DBDE;
+        left: none;
+        right: none;
+      }
+      background: #fff;
+
+      &.--nd-filled {
+        .nd-control {
+          outline: none;
+          line-height: 24px;
+          margin-top: 18px;
+        }
+
+        .nd-label {
+          font-size: 11px;
+          line-height: 13px;
+          top: 6px;
+        }
+      }
+
+      .nd-control {
+        display: block;
+        width: calc(100% - 32px);
+        line-height: 42px;
+        border: none;
+        padding: 0 16px;
+        margin: 0;
+        font-size: 15px;
+        @include transition(.2s ease all);
+
+        &:focus{
+          outline: none;
+          line-height: 24px;
+          margin-top: 18px;
+
+          +.nd-label{
+            font-size: 11px;
+            line-height: 13px;
+            top: 6px;
+            color: #2278F1;
+          }
+        }
+      }
+
+      .nd-label {
+        position: absolute;
+        top: 0px;
+        left: 16px;
+        font-size: 15px;
+        color: #8890a7;
+        line-height: 42px;
+        @include transition(.2s ease all);
+
+      }
+    }
+  }
+}
+
+.nd-h-form {
+  margin-top: 20px;
+  .nd-field{
+    margin-top: 10px;
+
+    .nd-control-group {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      border: {
+        top: 1px solid #D8DBDE;
+        bottom: 1px solid #D8DBDE;
+        left: none;
+        right: none;
+      }
+      height: 42px;
+
+      .nd-label {
+        flex-grow: 1;
+        flex-basis: 0;
+        color: #8890a7;
+        font-size: 15px;
+        line-height: 100%;
+        padding: 0 16px;
+      }
+
+      .nd-control {
+        flex-grow: 4;
+        font-size: 15px;
+        height: 100%;
+        border: none;
+        padding: 0 16px;
+
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+  }
+}

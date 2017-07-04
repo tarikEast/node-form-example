@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('material');
+  this.route('horisontal');
 });
 
 export default Router;

@@ -1,0 +1,13 @@
+{{#do-field propertyName
+  object=object
+  objectName=objectName
+  showAllValidations=showAllValidations
+  as |field|}}
+
+  <div class={{if field.value "nd-control-group --nd-filled" "nd-control-group --nd-empty"}}>
+    {{field.do-control type}}
+    {{field.do-label labelText}}
+  </div>
+
+  {{field.do-feedback}}
+{{/do-field}}
